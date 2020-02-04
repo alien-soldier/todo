@@ -1,8 +1,9 @@
-reference:
-https://www.postgresql.org/docs/9.1/app-pgdump.html
-pg_dump [connection-option...] [option...] [dbname]
 
 ### Backup
+
+reference: https://www.postgresql.org/docs/9.1/app-pgdump.html
+
+pg_dump [connection-option...] [option...] [dbname]
 
 Using cmd:
 1. Go to `C:\Program Files\PostgreSQL\12\bin\`
@@ -21,6 +22,11 @@ Using cmd:
 `--section=pre-data --section=data --section=post-data`: is for selecting sub-part for backup which by default includes all. passing all item is equal to not passing them.
 
 ## Restore
+
+reference: https://www.postgresql.org/docs/9.1/app-pgrestore.html
+
+pg_restore [connection-option...] [option...] [filename]
+
 1. Create a database with any desired name. Of course it is recommended to naming it exactly the one you backed up 
 2. Go to `C:\Program Files\PostgreSQL\12\bin\`
 3. write below code and press enter: 
