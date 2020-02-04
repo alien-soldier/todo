@@ -1,9 +1,12 @@
-Instruction is for Postgresql
+reference:
+https://www.postgresql.org/docs/9.1/app-pgdump.html
+pg_dump [connection-option...] [option...] [dbname]
+
 ### Backup
 
 Using cmd:
 1. Go to `C:\Program Files\PostgreSQL\12\bin\`
-2. write below code and press enter: 
+2.Write below code and press enter: 
     
     `pg_dump.exe --file "backup file path" --host "..." --port "..." --username "..." --password --verbose --format=c "DB Name"`
     
