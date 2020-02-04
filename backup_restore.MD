@@ -5,7 +5,7 @@ Reference: https://www.postgresql.org/docs/9.1/app-pgdump.html
 
 ***`pg_dump [connection-option...] [option...] [dbname]`***
 
-#####Steps:
+##### Steps:
 1. Run cmd and Go to `C:\Program Files\PostgreSQL\12\bin\`
 2. Write below code and press enter: 
     
@@ -27,7 +27,7 @@ reference: https://www.postgresql.org/docs/9.1/app-pgrestore.html
 
 ***`pg_restore [connection-option...] [option...] [filename]`***
 
-#####Steps:
+##### Steps:
 1. Create a database with any desired name. Of course it is recommended to naming it exactly the one you backed up
 2. Run cmd: and Go to `C:\Program Files\PostgreSQL\12\bin\`
 3. Write below code and press enter: 
