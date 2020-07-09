@@ -1,11 +1,11 @@
-#Apache Arrow
+# Apache Arrow
 [Source](https://arrow.apache.org/docs/python/)
 >Apache Arrow is a development platform for in-memory analytics. It contains a set of technologies that enable big data systems to process and move data fast.   
 The project is developing a multi-language collection of libraries for solving systems problems related to in-memory analytical data processing. This includes such topics as:  
 >*   Reading and writing file formats (like CSV, Apache ORC, and Apache Parquet)
 >*   In-memory analytics and query processing
 
-###Python bindings: Python API of Apache Arrow, PyArrow
+### Python bindings: Python API of Apache Arrow, PyArrow
 >The Arrow Python bindings (also named **“PyArrow”**) have first-class integration with NumPy, pandas, and built-in Python objects. 
 They are based on the C++ implementation of Arrow.
 
@@ -64,8 +64,8 @@ The default of preserve_index is None, which behaves as follows:
 df = table.to_pandas(self_destruct=True)
 del table  # not necessary, but a good practice
 ```
-##Apache Parquet
-###Reading and Writing the Apache Parquet Format
+## Apache Parquet
+### Reading and Writing the Apache Parquet Format
 >The Apache Parquet project provides a standardized open-source columnar storage format for use in data analysis systems.    
 [Source](https://parquet.apache.org/documentation/latest/)   
 Apache Arrow is an ideal in-memory transport layer for data that is being read or written with Parquet files        
@@ -78,7 +78,7 @@ PyArrow includes Python bindings to parquet also, which thus enables reading and
 >If you installed pyarrow with pip or conda, it should be built with Parquet support bundled:
 `import pyarrow.parquet as pq`
 
-###Reading and Writing Single Files
+### Reading and Writing Single Files
 >The functions `read_table()` and `write_table()` read and write the pyarrow.Table objects, respectively.   
 ```python
 import pandas as pd
@@ -173,12 +173,12 @@ pq.write_table(table, where, compression='gzip')
 pq.write_table(table, where, compression='brotli')
 pq.write_table(table, where, compression='none')
 ```
-###`Snappy` generally results in better performance, while `Gzip` may yield smaller files.
+### `Snappy` generally results in better performance, while `Gzip` may yield smaller files.
 >These settings can also be set on a per-column basis:
 ```python
 pq.write_table(table, where, compression={'foo': 'snappy', 'bar': 'gzip'}, use_dictionary=['foo', 'bar'])
 ```
-####Partitioned Datasets (Multiple Files)
+#### Partitioned Datasets (Multiple Files)
 A dataset partitioned by year and month may look like on disk:
 ```dataset_name/
   year=2007/
@@ -216,7 +216,7 @@ You can also use the convenience function read_table exposed by **pyarrow.parque
 additional Dataset object creation step.    
 ```table = pq.read_table('dataset_name')```
 
->####Note
+>#### Note
 >**The ParquetDataset is being reimplemented based on the new generic Dataset API "Tabular Datasets"**
 This is not yet the default, but can already be enabled by passing the `use_legacy_dataset=False` keyword to `ParquetDataset` or `read_table()`
 >```python
@@ -230,14 +230,14 @@ This is not yet the default, but can already be enabled by passing the `use_lega
 >In the future, this will be turned on by default.
 
 
-##Filtering
+## Filtering
 >Parquet supports **predicate pushdown ** on RowGroup and Page level. While page-level filtering is not yet available 
 >and will be a bit more complex to implement, you can already do basic RowGroup filtering using pyarrow.    
 >With `pyarrow.ParquetFile(…).metadata.row_group(…).column(…).{min,max}` you get the minimum and maximum of a RowGroup for a given column.  
 >When you compare your filters against these statistics, you should be able to only read a subset of the file using `read_rowgroup`.      
 
 But this is not the useful solution.    
-####What should I use?
+#### What should I use?
 [API Source for parquet.read_table()](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.read_table.html#pyarrow.parquet.read_table)    
 [API Source for parquet.parquet.ParquetDataset()](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.ParquetDataset.html#pyarrow.parquet.ParquetDataset)
 
@@ -270,12 +270,12 @@ Both of "read single parquet file" and "read dataset" has a `filters` parameter.
 -   `write_to_dataset(table, root_path[, …])`
 
 
-##What should I do?
+## What should I do?
 >1.  write you parquet file in logical part (row group)
 >2.  use Filters for fetching the part you want
 
-#Writing
-####How to write parquet in logical part?
+# Writing
+#### How to write parquet in logical part?
 *  **Using `parquet.writer`**    
 [Sourcce](http://peter-hoffmann.com/2020/understand-predicate-pushdown-on-rowgroup-level-in-parquet-with-pyarrow-and-python.html)
 split your pandas on favorite part   
@@ -311,7 +311,7 @@ Remember Since an entire row group might need to be read, your logically splitti
  
 Before paying more attention to fastparquet let see filtering on reading
  
-#Reading (with Filtering) 
+# Reading (with Filtering) 
 [](https://github.com/pandas-dev/pandas/issues/26551)
 
 [Pyarrow all parquet api](https://arrow.apache.org/docs/python/api/formats.html)    
@@ -341,7 +341,7 @@ Someone answers above question: "pyarrow would need to expose this; pandas alrea
 But it has some problem with pandas 1.0.4 and you should use `pandas 1.0.3` and `pyarrow '0.17.1'`
 
 ---
-##fastparquet
+## fastparquet
 A Python interface to the Parquet file format.  
 read and write Parquet files, in single- or multiple-file format. The latter is commonly found in hive/Spark usage. 
 ability to choose row divisions and partitioning on write.
