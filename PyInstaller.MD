@@ -1,4 +1,4 @@
-###pyinstaller
+##pyinstaller
 
 1.  ***Failed to execute script pyi_rth_pkgres:***  
     `error: failed to execute script pyi_rth_pkgres`    
