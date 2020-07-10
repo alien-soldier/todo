@@ -130,8 +130,8 @@ But the important steps are:
     `c:\users\administrator\.virtualenvs\ciscoapi-wlbhpfnx\scripts\python.exe|c:\users\administrator\.virtualenvs\ciscoapi-wlbhpfnx\lib\site-packages\wfastcgi.py`
     The first part is the address of project python interpreter (virtual env) and the second one is the address of wfastcgi script module (also for the virtual env) 
     
-2.  Enable the cgi feature of iis
-3.  Open IIS
+2.  Enable the cgi feature of iis [reference](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/security/isapicgirestriction/add)
+3.  Open IIS [installation reference](https://docs.microsoft.com/en-us/iis/install/installing-iis-85/installing-iis-85-on-windows-server-2012-r2)
 4.  Right-click on the server name and select add website.
 5.  Enter the 'site name', 'physical path' and 'site binding.
     > physical path : the flask app folder address (C:\Users\Administrator\PycharmProjects\CiscoApi)    
@@ -164,6 +164,9 @@ But the important steps are:
         Then select 'Edit permission > security > edit > add >'    
         write `IUSR` then click on 'check name' for finding it. then add it. repeat it again for `IIS_IUSRS`
     -   repeat above step but for your project python virtual env folder.
+    > If "Object named IIS_IUSRS could not be found":   
+    On the Add panel, click on "Locations"; Now scroll up to the top and you should see the name of your machine you are trying to configure at the top of the tree structure.       Select this entry and hit ok. IIS_IUSRS should now be correctly found for instance as [DMNNAMEOFMACHINE]\IIS_IUSRS;        
+    [reference](https://stackoverflow.com/questions/30846213/object-named-iis-iusrs-could-not-be-found-when-adding-user-to-php-sessions-dir)
     
 [Deployment reference](https://stackoverflow.com/questions/58261464/how-to-host-python-3-7-flask-application-on-windows-server)
     
