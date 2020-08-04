@@ -258,7 +258,7 @@ But the important steps are:
 # For depolying client part on IIS:
 1.  you can use the IIS 'Default Web Site'. by exploring its folder and replace your own files.(index, script, css)
 >   There is no need to extra steps.    
-    some goold refrence about it:   
+    some good reference about it:   
     https://www.atlantic.net/hipaa-compliant-hosting/how-to-build-static-website-iis/
     https://www.guru99.com/deploying-website-iis.html
     https://www.codeproject.com/Tips/826803/How-to-Access-the-Site-using-Domain-Name-Instead-o  
