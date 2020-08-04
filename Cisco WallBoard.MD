@@ -254,3 +254,15 @@ But the important steps are:
     ```
     [Answer reference](https://stackoverflow.com/questions/57949871/how-to-set-get-pandas-dataframes-into-redis-using-pyarrow/57986261#57986261)
 
+
+# For depolying client part on IIS:
+1.  you can use the IIS 'Default Web Site'. by exploring its folder and replace your own files.(index, script, css)
+>   There is no need to extra steps.    
+    some goold refrence about it:   
+    https://www.atlantic.net/hipaa-compliant-hosting/how-to-build-static-website-iis/
+    https://www.guru99.com/deploying-website-iis.html
+    https://www.codeproject.com/Tips/826803/How-to-Access-the-Site-using-Domain-Name-Instead-o  
+    https://support.rackspace.com/how-to/modify-your-hosts-file/    
+    CMD run as administartor and run:
+        notepad c:\windows\system32\drivers\etc\hosts
+    
