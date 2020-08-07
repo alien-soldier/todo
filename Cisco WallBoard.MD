@@ -254,6 +254,16 @@ But the important steps are:
     ```
     [Answer reference](https://stackoverflow.com/questions/57949871/how-to-set-get-pandas-dataframes-into-redis-using-pyarrow/57986261#57986261)
 
+# For Allowing CORS
+1.  pip install flask-cors
+2.  In the simplest case, initialize the Flask-Cors extension with default arguments in order to allow CORS for all domains on all routes
+    >```python
+    app = Flask(__name__)
+    CORS(app)
+    api = Api(app)    
+    ```
+    [reference](https://flask-cors.readthedocs.io/en/latest/)
+
 
 # For depolying client part on IIS:
 1.  you can use the IIS 'Default Web Site'. by exploring its folder and replace your own files.(index, script, css)
