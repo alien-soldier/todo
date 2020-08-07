@@ -257,7 +257,7 @@ But the important steps are:
 # For Allowing CORS
 1.  pip install flask-cors
 2.  In the simplest case, initialize the Flask-Cors extension with default arguments in order to allow CORS for all domains on all routes
-    >```python
+    ```python
     app = Flask(__name__)
     CORS(app)
     api = Api(app)    
