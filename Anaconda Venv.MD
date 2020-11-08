@@ -3,7 +3,7 @@
 **open anaconda prompt and run:**
 - `conda create --name <env_name> python=3.6 --no-default-packages`
   > It creates venv on somewhere like this address `"C:\ProgramData\Miniconda3\envs\<env_name>"`
-- `activate Pyinstalller`  
+- `activate <env_name>`  
 - `conda list`  
 		  shows all installed packages (pip freeze)
   >- `conda install requests`  
