@@ -162,11 +162,12 @@ But the important steps are:
 15. The final and tricky step which is granting permission: 
     > You should assign the `IUSR` and `IIS_IUSRS` user permission to the 'flask site folder' and 'python folder'. how?     
     
-    new solution: (short key without need any windows permision)    
-    -   right_click on folder > give access to > specific people > paste **IUSR** and click on 'Add' button, paste **IIS_IUSRS** and click on 'Add' button, Then click **Share**.
-    do this for both 'flask site folder' and 'python folder'    
+    **new solution** (short key without need any windows permision):    
+    -   right_click on folder > give access to > specific people > paste **IUSR** and click on **Add** button, paste **IIS_IUSRS** and click on **Add** button  
+        Then click **Share** button.    
+    Do this for both 'flask site folder' and 'python folder'    
     
-    old solution:   
+    **old solution:**   
     -   For flask site folder right click on your site on IIS. or go to the flask project folder itself and right click on it.  
         Then select 'Edit permission > security > edit > add >'    
         write `IUSR` then click on 'check name' for finding it. then add it. repeat it again for `IIS_IUSRS`
