@@ -31,6 +31,7 @@
     * redis
     * pyinstaller
 3.  Install redis and set it as a global service
+    [source](https://github.com/microsoftarchive/redis/releases/tag/win-3.2.100)
 4.  Write fetching script and run it. If everything is correct you can get the result from redis cli.
     Fetching script could be like this:
     ```python
