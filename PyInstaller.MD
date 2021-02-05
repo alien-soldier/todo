@@ -6,7 +6,9 @@
     Build the application by adding the --hidden-import argument to the command.    
     For example, running the command given below worked for me. 
     *   `pyinstaller --hidden-import=pkg_resources.py2_warn example.py`
-    *   `pyinstaller --hidden-import=pkg_resources.py2_warn --onefile example.py`
+    *   `pyinstaller --hidden-import=pkg_resources.py2_warn --onefile example.py`   
+    *   `pyinstaller --hidden-import=pkg_resources.py2_warn --hidden-import=pyodbc --onefile mix_to_dis.py`
+    
     
     [Answer reference](https://stackoverflow.com/questions/37815371/pyinstaller-failed-to-execute-script-pyi-rth-pkgres-and-missing-packages)
     
