@@ -364,6 +364,49 @@ read_table will read all of the row groups and concatenate them into a single ta
     table = pq.read_table('dataset_name')
     ```
 
+### More about filtering (Predicate Pushdown)
+`filters (List[Tuple] or List[List[Tuple]] or None (default)) –`
+
+>Rows which do not match the filter predicate will be removed from scanned data.     
+>Partition keys embedded in a nested directory structure will be exploited to avoid loading files at all if they contain no matching rows.  
+>If use_legacy_dataset is True, filters can only reference partition keys and only a hive-style directory structure is supported.   
+>When setting use_legacy_dataset to False, also within-file level filtering and different partitioning schemes are supported.   
+>**`It is in different from fastparquet which its filter isn't on row_level and returns entire of the matched row_group`**    
+>Predicates are expressed in disjunctive normal form (DNF), like `[[('x', '=', 0), ...], ...]`   
+>DNF allows arbitrary boolean logical combinations of single column predicates.     
+>The innermost tuples each describe a single column predicate.    
+>The list of inner predicates is interpreted as a conjunction (AND), forming a more selective and multiple column predicate.    
+>Finally, the most outer list combines these filters as a disjunction (OR). 
+>Predicates may also be passed as `List[Tuple]`. This form is interpreted as a single conjunction.     
+>To express OR in predicates, one must use the (preferred) `List[List[Tuple]]` notation.    
+>Each tuple has format: `(key, op, value)` and compares the key with the value. 
+>The supported op are: `= or ==, !=, <, >, <=, >=, in and not in`.   
+>If the op is in or not in, the value must be a collection such as a list, a set or a tuple.    
+>Examples:
+>```python
+>('x', '=', 0)
+>('y', 'in', ['a', 'b', 'c'])
+>('z', 'not in', {'a','b'})
+>```
+>Filtering with Logical ANDs
+>```python
+>dataset = pq.ParquetDataset(..., 
+>    filters=[
+>        ('col_1', '=', 'A'),
+>        ('col_2', '=', 'B')
+>    ]
+>)
+>```
+>Filtering with Logical ORs
+>```python
+>dataset = pq.ParquetDataset(..., 
+>filters=[
+>        [('col_1', '=', 'A')],
+>        [('col_2', '=', 'B')]
+>    ]
+>)
+>```
+
 
 
 **Inspecting the Parquet File Metadata:**
