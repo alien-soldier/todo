@@ -149,6 +149,8 @@ batches = [batch] * 5
 table = pa.Table.from_batches(batches)
 ```
 
+[pyarrow.Table API](https://arrow.apache.org/docs/python/generated/pyarrow.Table.html#pyarrow.Table)
+
 ---
 ### Here is starting point    
 As you’ll see in the pandas section, we can convert these objects (Array and Table) to contiguous NumPy arrays for use in pandas
