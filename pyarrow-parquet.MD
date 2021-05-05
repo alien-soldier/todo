@@ -241,7 +241,7 @@ The Apache Parquet project provides a standardized open-source columnar storage
 
 ## Writing Single File
 
-1.  #### The function write_table()  
+1.  #### [The function write_table()](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.write_table.html#pyarrow.parquet.write_table)  
     `write_table(table, where[, row_group_size, …])`  ->   Write a pyarrow.Table to Parquet format.
 
     ```python
@@ -249,7 +249,7 @@ The Apache Parquet project provides a standardized open-source columnar storage
     pq.write_table(table, 'example.parquet')
     ```
 
-2.  #### Class ParquetWriter for logically controlling row groups (writing to multiple row groups)   
+2.  #### [Class ParquetWriter for logically controlling row groups (writing to multiple row groups)](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.ParquetWriter.html#pyarrow.parquet.ParquetWriter)   
     `ParquetWriter(where, schema[, filesystem, …])`   ->  Class for incrementally building a Parquet file for Arrow tables.
 
     >Methods:   
@@ -282,7 +282,7 @@ The Apache Parquet project provides a standardized open-source columnar storage
 
 **Writing to Partitioned Datasets**
 
-1.  #### The function write_to_dataset()     
+1.  #### [The function write_to_dataset()](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.write_to_dataset.html#pyarrow.parquet.write_to_dataset)     
     `write_to_dataset(table, root_path[, …])` ->  Wrapper around parquet.write_table for writing a Table to Parquet format by partitions.
 
 ```python
@@ -293,7 +293,7 @@ pq.write_to_dataset(table, root_path='dataset_name', partition_cols=['one', 'two
 
 ## Reading Single or multiple Files
 
-1.  #### The functions read_table()      
+1.  #### [The functions read_table()](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.read_table.html#pyarrow.parquet.read_table)      
     `read_table(source[, columns, use_threads, …])`   ->  Read a Table from Parquet format  
     >some important params:
     >*   source :  can be a single file name or directory name.
@@ -307,7 +307,7 @@ pq.write_to_dataset(table, root_path='dataset_name', partition_cols=['one', 'two
     table2 = pq.read_table('example.parquet', columns=['one', 'three'])
     ```
 
-2.  #### The function read_pandas()
+2.  #### [The function read_pandas()](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.read_pandas.html#pyarrow.parquet.read_pandas)
     `read_pandas(source[, columns])`  ->  Read a Table from Parquet format, also reading DataFrame index values if known in the file metadata   
 
     When reading a subset of columns from a file that used a Pandas dataframe as the source, we use read_pandas
@@ -319,7 +319,7 @@ pq.write_to_dataset(table, root_path='dataset_name', partition_cols=['one', 'two
 
 **read_table()** uses the ParquetFile class, which has other features:
 
->   ParquetFile(source[, metadata, …])  ->  Reader interface for a single Parquet file.     
+>   [ParquetFile(source[, metadata, …])  ->  Reader interface for a single Parquet file.](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.ParquetFile.html#pyarrow.parquet.ParquetFile)     
 >>Methods    
 >*  __init__(source[, metadata, …])
 >*  iter_batches([batch_size, row_groups, …])           ->  Read streaming batches from a Parquet file
@@ -346,7 +346,7 @@ read_table will read all of the row groups and concatenate them into a single ta
 
 **Reading from Partitioned Datasets**
 
-3.  #### Class ParquetDataset
+3.  #### [Class ParquetDataset](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.ParquetDataset.html#pyarrow.parquet.ParquetDataset)
     `([path_or_paths, filesystem, …])`  ->  Encapsulates details of reading a complete Parquet  
     dataset possibly consisting of multiple files and partitions in subdirectories.
 
@@ -411,7 +411,7 @@ read_table will read all of the row groups and concatenate them into a single ta
 
 **Inspecting the Parquet File Metadata:**
 
-1. ## The read_metadata fucntion
+1. ## [The read_metadata fucntion](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.read_metadata.html#pyarrow.parquet.read_metadata)
     `read_metadata(where[, memory_map])`   ->  Read FileMetadata from footer of a single Parquet file.
 
     The FileMetaData of a Parquet file can be accessed through ParquetFile class as:
@@ -430,8 +430,7 @@ read_table will read all of the row groups and concatenate them into a single ta
     The returned FileMetaData object allows to inspect the Parquet file metadata, such as the row groups and column chunk metadata and statistics:
 
 
-## Tabular Datasets
-https://arrow.apache.org/docs/python/dataset.html#dataset
+## [Tabular Datasets](https://arrow.apache.org/docs/python/dataset.html#dataset)        
 
 >The pyarrow.dataset module provides functionality to efficiently work with tabular,and multi-file datasets.
 This includes:
