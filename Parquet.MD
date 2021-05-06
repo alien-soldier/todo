@@ -540,18 +540,18 @@ print(row_g_boundary_stats)
 #### Below lines was some old stuff which needs to review for deleting or merging with above docs. 
 
 
-#*pyarrow*
+# *pyarrow*
 
-##*Dumping*
+## *Dumping*
 
-###*Directly From Pandas To Parquet*
+### *Directly From Pandas To Parquet*
 >`df.to_parquet("df.parquet", row_group_size=10000, engine="pyarrow", index=True)`  
 >row_group_size splits dataFrame to row_group. It does not accept offset. Then rational splitting on same size can't solve problem.  
 
 
 
 
-##*Fetching*
+## *Fetching*
 
 
 
