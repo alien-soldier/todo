@@ -9,7 +9,7 @@
     Set global Path during installation (also you could install it for all users)
     > if you not select all users you should give access to **IUSR** and **IIS_IUSRS** for your python folder 
     > (C:\Users\Administrator\AppData\Local\Programs\Python) while depolying
-    > (depolying source)[https://stackoverflow.com/questions/60043072/python-exe-the-fastcgi-process-exited-unexpectedly]
+    > [depolying source](https://stackoverflow.com/questions/60043072/python-exe-the-fastcgi-process-exited-unexpectedly)
 2.  install pipenv using cmd `pipm install pipenv`
 3.  Download and install pycharm
 
@@ -74,6 +74,7 @@
     * redis
     * wfastcgi
     * pandas
+    * flask-cors
     
         >   if you used `df.to_msgpack()` for saving dataFrame on redis. you need `pd.read_msgpack(redis.get("key"))` for
         converting the retrieved object(string) from redis object(string) to dataFrame.    
