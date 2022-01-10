@@ -147,8 +147,8 @@ But the important steps are:
     `Request path` : `*`       
     `Module` : `FastCgiModule`    
     `Executable (optional)` :    
-        > The result of `wfastcgi-enable` command which was:    
-        `project python interperter virtual env address|fastcgi_module of virtual env address`       
+    > The result of `wfastcgi-enable` command which was:    
+    > `project python interperter virtual env address|fastcgi_module of virtual env address`       
 
     `Name: an Optional name like FlaskHandler`      
 8.  Click 'Request Restrictions'. Make sure the `Invoke handler only if request is mapped to:` checkbox is unchecked
