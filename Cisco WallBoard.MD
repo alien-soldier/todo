@@ -4,7 +4,7 @@
 
 ---
 **Python set up part**
-1.  Download and install python 3.5 - 3.7, 32bit version (3.6.8 was ok) (download)[https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe]    
+1.  Download and install python 3.5 - 3.7, 32bit version (3.6.8 was ok) [download](https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe)
     32bit is a must for odbc 32bit driver. and 3.5 - 3.7 needed for pyinstaller.     
     Set global Path during installation (also you could install it for all users)
     > if you not select all users you should give access to **IUSR** and **IIS_IUSRS** for your python folder (in addtion to the flask-app virtualenv) 
