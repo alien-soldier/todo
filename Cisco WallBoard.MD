@@ -165,7 +165,7 @@ But the important steps are:
 14. Click OK.
 15. The final and tricky step which is granting permission: 
     > You should assign the `IUSR` and `IIS_IUSRS` user permission to the 'flask site folder' and 'python folder'. how?     
-    > ### from python folder I mean both installed python itself, and virtual-env for flask_app    
+    > ### For python-folder we should give permission to both installed python itself, and virtual-env for flask_app    
     > #### python-folder: `C:\Users\Administrator\AppData\Local\Programs\Python`     
     > #### virtual_env for flask-app: `C:\Users\Administrator\.virtualenvs\CiscoApi-wLbhPFNX'
     > #### flak_app folder: `C:\Users\Administrator\PycharmProjects\CiscoApi`
