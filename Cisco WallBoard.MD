@@ -147,8 +147,8 @@ But the important steps are:
     `Request path` : `*`       
     `Module` : `FastCgiModule`    
     `Executable (optional)` :    
-    > The result of `wfastcgi-enable` command which was:    
-         `project python interperter virtual env address|fastcgi_module of virtual env address`       
+        > The result of `wfastcgi-enable` command which was:    
+        `project python interperter virtual env address|fastcgi_module of virtual env address`       
 
     `Name: an Optional name like FlaskHandler`      
 8.  Click 'Request Restrictions'. Make sure the `Invoke handler only if request is mapped to:` checkbox is unchecked
@@ -157,7 +157,7 @@ But the important steps are:
 11. Now go back and again select the server name on IIS and select fast CGI setting from the middle pane.
 12. Double click on it (The created row), then click on the "..." for the Environment Variables collection to launch the EnvironmentVariables Collection Editor:
 13. Click Add for adding two below variable:
-    > `PYTHONPATH` : `Flask project physical path`  
+    > `PYTHONPATH` : `Flask project physical path`  (C:\Users\Administrator\PycharmProjects\CiscoApi)   
     `WSGI_HANDLER` : `app.app`  
     My Flask app is named app.py so the value is app.app — if yours is named site.py it would be site.app or similar. In other word       
     -   The first part is: ***"The name of flask app entry point (the .py file)"***     
